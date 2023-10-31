@@ -6,14 +6,24 @@
 //
 
 import UIKit
+import RxSwift
+import SnapKit
 
-class ViewController: UIViewController {
+class OnboardingScreensViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .green
+        setup()
     }
 
+    private func setup() {
+        setupBackground()
+    }
+    
+    private func setupBackground() {
+        
+    }
 
 }
 
