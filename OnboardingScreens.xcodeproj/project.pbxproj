@@ -14,6 +14,12 @@
 		93AB23852AF175990091D2CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93AB23832AF175990091D2CE /* LaunchScreen.storyboard */; };
 		93AB23952AF17F300091D2CE /* OnboardingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AB23942AF17F300091D2CE /* OnboardingCardView.swift */; };
 		93AB23982AF181CE0091D2CE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AB23972AF181CE0091D2CE /* Constants.swift */; };
+		93AB239B2AF1839F0091D2CE /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AB239A2AF1839F0091D2CE /* String+Extension.swift */; };
+		93AB239E2AF1C59E0091D2CE /* OnboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AB239D2AF1C59D0091D2CE /* OnboardingPage.swift */; };
+		93AB23A12AF1CFF60091D2CE /* PrivacyCenterOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AB23A02AF1CFF60091D2CE /* PrivacyCenterOption.swift */; };
+		93AB23A32AF1D26C0091D2CE /* NSAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AB23A22AF1D26C0091D2CE /* NSAttributedString+Extension.swift */; };
+		93AB23A72AF1D5E10091D2CE /* OnboardingScreensViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AB23A62AF1D5E10091D2CE /* OnboardingScreensViewModel.swift */; };
+		93AB23A92AF1D62F0091D2CE /* ActionButtonConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AB23A82AF1D62F0091D2CE /* ActionButtonConfig.swift */; };
 		E26E1FE468FD8583A0A5B33D /* Pods_OnboardingScreens.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8D6EDF2A794E310701986E /* Pods_OnboardingScreens.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +34,12 @@
 		93AB23862AF175990091D2CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93AB23942AF17F300091D2CE /* OnboardingCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCardView.swift; sourceTree = "<group>"; };
 		93AB23972AF181CE0091D2CE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		93AB239A2AF1839F0091D2CE /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		93AB239D2AF1C59D0091D2CE /* OnboardingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage.swift; sourceTree = "<group>"; };
+		93AB23A02AF1CFF60091D2CE /* PrivacyCenterOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyCenterOption.swift; sourceTree = "<group>"; };
+		93AB23A22AF1D26C0091D2CE /* NSAttributedString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Extension.swift"; sourceTree = "<group>"; };
+		93AB23A62AF1D5E10091D2CE /* OnboardingScreensViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreensViewModel.swift; sourceTree = "<group>"; };
+		93AB23A82AF1D62F0091D2CE /* ActionButtonConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButtonConfig.swift; sourceTree = "<group>"; };
 		B8C1B04F060956263E785F4D /* Pods-OnboardingScreens.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnboardingScreens.release.xcconfig"; path = "Target Support Files/Pods-OnboardingScreens/Pods-OnboardingScreens.release.xcconfig"; sourceTree = "<group>"; };
 		BD8D6EDF2A794E310701986E /* Pods_OnboardingScreens.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OnboardingScreens.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -122,8 +134,8 @@
 		93AB23902AF177A40091D2CE /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				93AB23932AF17F130091D2CE /* Subviews */,
-				93AB237C2AF175960091D2CE /* OnboardingScreensViewController.swift */,
+				93AB23A52AF1D5C00091D2CE /* ViewModel */,
+				93AB23A42AF1D5B90091D2CE /* View */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -138,6 +150,8 @@
 		93AB23922AF178BC0091D2CE /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				93AB239F2AF1CFDC0091D2CE /* PrivacyCenter */,
+				93AB239C2AF1C58A0091D2CE /* Onboarding */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -153,9 +167,53 @@
 		93AB23962AF181B90091D2CE /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				93AB23992AF183890091D2CE /* Extensions */,
 				93AB23972AF181CE0091D2CE /* Constants.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		93AB23992AF183890091D2CE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				93AB239A2AF1839F0091D2CE /* String+Extension.swift */,
+				93AB23A22AF1D26C0091D2CE /* NSAttributedString+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		93AB239C2AF1C58A0091D2CE /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				93AB239D2AF1C59D0091D2CE /* OnboardingPage.swift */,
+				93AB23A82AF1D62F0091D2CE /* ActionButtonConfig.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		93AB239F2AF1CFDC0091D2CE /* PrivacyCenter */ = {
+			isa = PBXGroup;
+			children = (
+				93AB23A02AF1CFF60091D2CE /* PrivacyCenterOption.swift */,
+			);
+			path = PrivacyCenter;
+			sourceTree = "<group>";
+		};
+		93AB23A42AF1D5B90091D2CE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				93AB23932AF17F130091D2CE /* Subviews */,
+				93AB237C2AF175960091D2CE /* OnboardingScreensViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		93AB23A52AF1D5C00091D2CE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				93AB23A62AF1D5E10091D2CE /* OnboardingScreensViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		A930C5E8D2FAFE8E3A276C50 /* Frameworks */ = {
@@ -280,10 +338,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93AB23A32AF1D26C0091D2CE /* NSAttributedString+Extension.swift in Sources */,
 				93AB237D2AF175960091D2CE /* OnboardingScreensViewController.swift in Sources */,
 				93AB23792AF175960091D2CE /* AppDelegate.swift in Sources */,
 				93AB23982AF181CE0091D2CE /* Constants.swift in Sources */,
 				93AB237B2AF175960091D2CE /* SceneDelegate.swift in Sources */,
+				93AB23A12AF1CFF60091D2CE /* PrivacyCenterOption.swift in Sources */,
+				93AB23A72AF1D5E10091D2CE /* OnboardingScreensViewModel.swift in Sources */,
+				93AB239B2AF1839F0091D2CE /* String+Extension.swift in Sources */,
+				93AB23A92AF1D62F0091D2CE /* ActionButtonConfig.swift in Sources */,
+				93AB239E2AF1C59E0091D2CE /* OnboardingPage.swift in Sources */,
 				93AB23952AF17F300091D2CE /* OnboardingCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -430,11 +494,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 57CXKABA7X;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OnboardingScreens/Application/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -459,11 +523,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 57CXKABA7X;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OnboardingScreens/Application/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
