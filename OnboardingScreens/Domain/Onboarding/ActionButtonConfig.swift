@@ -9,5 +9,5 @@ import UIKit
 
 struct ActionButtonConfig {
     let textColor: UIColor?
-    let title: String
+    let title: NSAttributedString
 }

@@ -15,13 +15,10 @@ final class OnboardingScreensViewController: UIViewController {
     private let cardView = OnboardingCardView()
     private let termsLabel = UITextView()
     private let actionButton = UIButton()
-    
-    var currentPage: OnboardingPage = .yourPersonalAssistant
-
+    private let viewModel = OnboardingScreensViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setup()
     }
     
@@ -31,9 +28,11 @@ final class OnboardingScreensViewController: UIViewController {
     }
 
     private func setup() {
+        navigationController?.isNavigationBarHidden = true
         setupBackground()
         setupTermsLabel()
         setupActionButton()
+        setupCardViews()
     }
     
     private func setupBackground() {
@@ -117,10 +116,8 @@ final class OnboardingScreensViewController: UIViewController {
     }
     
     private func setupActionButton() {
-        
         actionButton.backgroundColor = .white
-        actionButton.setTitle(currentPage.actionButtonText.title, for: .normal)
-        actionButton.setTitleColor(currentPage.actionButtonText.textColor, for: .normal)
+        actionButton.setAttributedTitle(viewModel.currentPage.actionButtonText.title, for: .normal)
         
         view.addSubview(actionButton)
         actionButton.snp.makeConstraints {
@@ -130,6 +127,15 @@ final class OnboardingScreensViewController: UIViewController {
         }
     }
 
+    private func setupCardViews() {
+        
+        view.addSubview(cardView)
+        cardView.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).inset(56)
+            $0.left.right.equalToSuperview().inset(30)
+            $0.bottom.equalTo(actionButton.snp.top).inset(-28)
+        }
+    }
 }
 
 extension OnboardingScreensViewController: UITextViewDelegate {

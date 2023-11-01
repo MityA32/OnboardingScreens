@@ -6,7 +6,21 @@
 //
 
 import Foundation
+import RxSwift
 
 final class OnboardingScreensViewModel {
     
+    private let inActionClick = BehaviorSubject<OnboardingPage>(value: .yourPersonalAssistant)
+    
+    private let disposeBag = DisposeBag()
+    
+    var currentPage: OnboardingPage = .upgrageForUnlimitedAICapabilities
+    
+    init() {
+        setupRx()
+    }
+    
+    private func setupRx() {
+        
+    }
 }
