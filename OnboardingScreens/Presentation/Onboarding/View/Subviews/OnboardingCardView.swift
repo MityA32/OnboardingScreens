@@ -16,7 +16,7 @@ final class OnboardingCardView: UIView {
     
     var page: OnboardingPage
     
-    init(page: OnboardingPage = .upgrageForUnlimitedAICapabilities) {
+    init(page: OnboardingPage = .yourPersonalAssistant) {
         self.page = page
         super.init(frame: .zero)
         setup()
@@ -52,11 +52,10 @@ final class OnboardingCardView: UIView {
         visualEffectView.layer.opacity = 0.52
         addSubview(visualEffectView)
     }
-
     
     private func setupImage() {
         pageImageView.image = page.image
-        pageImageView.contentMode = .scaleAspectFill
+        
         addSubview(pageImageView)
         pageImageView.snp.makeConstraints {
             $0.top.equalTo(50)
@@ -67,8 +66,6 @@ final class OnboardingCardView: UIView {
     
     private func setupMainLabel() {
         mainLabel.attributedText = page.mainText
-        mainLabel.textAlignment = .center
-        mainLabel.numberOfLines = 0
         
         addSubview(mainLabel)
         mainLabel.snp.makeConstraints {
@@ -80,11 +77,6 @@ final class OnboardingCardView: UIView {
     
     private func setupCaptionLabel() {
         captionLabel.attributedText = page.captionText
-        captionLabel.textAlignment = .center
-        captionLabel.numberOfLines = 2
-        captionLabel.adjustsFontSizeToFitWidth = true
-        captionLabel.minimumScaleFactor = 0.5
-        captionLabel.lineBreakMode = .byTruncatingTail
         
         addSubview(captionLabel)
         captionLabel.snp.makeConstraints {
@@ -95,4 +87,19 @@ final class OnboardingCardView: UIView {
         }
     }
     
+    func setup(for page: OnboardingPage) {
+        pageImageView.image = page.image
+        pageImageView.contentMode = .scaleAspectFill
+        
+        mainLabel.attributedText = page.mainText
+        mainLabel.textAlignment = .center
+        mainLabel.numberOfLines = 0
+        
+        captionLabel.attributedText = page.captionText
+        captionLabel.textAlignment = .center
+        captionLabel.numberOfLines = 2
+        captionLabel.adjustsFontSizeToFitWidth = true
+        captionLabel.minimumScaleFactor = 0.5
+        captionLabel.lineBreakMode = .byTruncatingTail
+    }
 }

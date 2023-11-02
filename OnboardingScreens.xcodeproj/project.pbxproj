@@ -25,6 +25,10 @@
 		93AB23B02AF275260091D2CE /* SFProText-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 93AB23AF2AF275260091D2CE /* SFProText-Regular.ttf */; };
 		93AB23B42AF27C9E0091D2CE /* SFProText-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 93AB23B12AF27C9D0091D2CE /* SFProText-Bold.ttf */; };
 		93AB23B52AF27C9E0091D2CE /* SFProText-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 93AB23B22AF27C9D0091D2CE /* SFProText-Medium.ttf */; };
+		93AB23B92AF29C5D0091D2CE /* SubscriptionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AB23B82AF29C5D0091D2CE /* SubscriptionService.swift */; };
+		93AB23BC2AF2A2360091D2CE /* OnboardingPageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AB23BB2AF2A2360091D2CE /* OnboardingPageCollectionViewCell.swift */; };
+		93AB23BE2AF318BD0091D2CE /* SubscriptionManagerBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AB23BD2AF318BD0091D2CE /* SubscriptionManagerBarView.swift */; };
+		93AB23C02AF320F00091D2CE /* Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AB23BF2AF320F00091D2CE /* Parameters.swift */; };
 		E26E1FE468FD8583A0A5B33D /* Pods_OnboardingScreens.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8D6EDF2A794E310701986E /* Pods_OnboardingScreens.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +54,10 @@
 		93AB23AF2AF275260091D2CE /* SFProText-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProText-Regular.ttf"; sourceTree = "<group>"; };
 		93AB23B12AF27C9D0091D2CE /* SFProText-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProText-Bold.ttf"; sourceTree = "<group>"; };
 		93AB23B22AF27C9D0091D2CE /* SFProText-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProText-Medium.ttf"; sourceTree = "<group>"; };
+		93AB23B82AF29C5D0091D2CE /* SubscriptionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionService.swift; sourceTree = "<group>"; };
+		93AB23BB2AF2A2360091D2CE /* OnboardingPageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageCollectionViewCell.swift; sourceTree = "<group>"; };
+		93AB23BD2AF318BD0091D2CE /* SubscriptionManagerBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionManagerBarView.swift; sourceTree = "<group>"; };
+		93AB23BF2AF320F00091D2CE /* Parameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parameters.swift; sourceTree = "<group>"; };
 		B8C1B04F060956263E785F4D /* Pods-OnboardingScreens.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnboardingScreens.release.xcconfig"; path = "Target Support Files/Pods-OnboardingScreens/Pods-OnboardingScreens.release.xcconfig"; sourceTree = "<group>"; };
 		BD8D6EDF2A794E310701986E /* Pods_OnboardingScreens.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OnboardingScreens.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -96,12 +104,12 @@
 		93AB23772AF175960091D2CE /* OnboardingScreens */ = {
 			isa = PBXGroup;
 			children = (
+				93AB238C2AF175A20091D2CE /* Application */,
+				93AB238F2AF1762C0091D2CE /* Resources */,
 				93AB23962AF181B90091D2CE /* Utils */,
 				93AB23922AF178BC0091D2CE /* Domain */,
 				93AB23912AF178B50091D2CE /* Data */,
-				93AB238F2AF1762C0091D2CE /* Resources */,
 				93AB238D2AF176120091D2CE /* Presentation */,
-				93AB238C2AF175A20091D2CE /* Application */,
 			);
 			path = OnboardingScreens;
 			sourceTree = "<group>";
@@ -154,6 +162,7 @@
 		93AB23912AF178B50091D2CE /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				93AB23B72AF29C320091D2CE /* Subscription */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -171,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				93AB23942AF17F300091D2CE /* OnboardingCardView.swift */,
+				93AB23BD2AF318BD0091D2CE /* SubscriptionManagerBarView.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -180,6 +190,7 @@
 			children = (
 				93AB23992AF183890091D2CE /* Extensions */,
 				93AB23972AF181CE0091D2CE /* Constants.swift */,
+				93AB23BF2AF320F00091D2CE /* Parameters.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -213,6 +224,7 @@
 		93AB23A42AF1D5B90091D2CE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				93AB23BA2AF2A2040091D2CE /* Cells */,
 				93AB23932AF17F130091D2CE /* Subviews */,
 				93AB237C2AF175960091D2CE /* OnboardingScreensViewController.swift */,
 			);
@@ -237,6 +249,22 @@
 				93AB23AB2AF26A870091D2CE /* SFProDisplay-Medium.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		93AB23B72AF29C320091D2CE /* Subscription */ = {
+			isa = PBXGroup;
+			children = (
+				93AB23B82AF29C5D0091D2CE /* SubscriptionService.swift */,
+			);
+			path = Subscription;
+			sourceTree = "<group>";
+		};
+		93AB23BA2AF2A2040091D2CE /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				93AB23BB2AF2A2360091D2CE /* OnboardingPageCollectionViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		A930C5E8D2FAFE8E3A276C50 /* Frameworks */ = {
@@ -366,9 +394,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93AB23BE2AF318BD0091D2CE /* SubscriptionManagerBarView.swift in Sources */,
 				93AB23A32AF1D26C0091D2CE /* NSAttributedString+Extension.swift in Sources */,
 				93AB237D2AF175960091D2CE /* OnboardingScreensViewController.swift in Sources */,
+				93AB23B92AF29C5D0091D2CE /* SubscriptionService.swift in Sources */,
 				93AB23792AF175960091D2CE /* AppDelegate.swift in Sources */,
+				93AB23C02AF320F00091D2CE /* Parameters.swift in Sources */,
 				93AB23982AF181CE0091D2CE /* Constants.swift in Sources */,
 				93AB237B2AF175960091D2CE /* SceneDelegate.swift in Sources */,
 				93AB23A12AF1CFF60091D2CE /* PrivacyCenterOption.swift in Sources */,
@@ -376,6 +407,7 @@
 				93AB239B2AF1839F0091D2CE /* String+Extension.swift in Sources */,
 				93AB23A92AF1D62F0091D2CE /* ActionButtonConfig.swift in Sources */,
 				93AB239E2AF1C59E0091D2CE /* OnboardingPage.swift in Sources */,
+				93AB23BC2AF2A2360091D2CE /* OnboardingPageCollectionViewCell.swift in Sources */,
 				93AB23952AF17F300091D2CE /* OnboardingCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
