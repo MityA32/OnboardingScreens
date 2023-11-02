@@ -17,6 +17,7 @@ final class OnboardingScreensViewController: UIViewController {
     private let actionButton = UIButton()
     private var onboardingCardsCollectionView: UICollectionView?
     private let pageControlImageView = UIImageView()
+    private let subscriptionManagerBarView = SubscriptionManagerBarView()
     
     private let disposeBag = DisposeBag()
     
@@ -120,12 +121,16 @@ final class OnboardingScreensViewController: UIViewController {
             .disposed(by: disposeBag)
         
         actionButton.rx.tap
-            .map { [weak self] in
-                print((self?.viewModel?.inNewPageClick.value ?? 0) + 1)
-                return (self?.viewModel?.inNewPageClick.value ?? 0) + 1
-            }
             .bind(to: viewModel.inNewPageClick)
             .disposed(by: disposeBag)
+        
+        subscriptionManagerBarView.inCloseClick
+            .bind(to: viewModel.inCloseClick)
+            .disposed(by: subscriptionManagerBarView.disposeBag)
+        
+        subscriptionManagerBarView.inRestorePurchaseClick
+            .bind(to: viewModel.inRestorePurchaseClick)
+            .disposed(by: subscriptionManagerBarView.disposeBag)
     }
     
     private func setupPage(_ page: OnboardingPageInfo) {
@@ -157,7 +162,7 @@ final class OnboardingScreensViewController: UIViewController {
     }
     
     private func setupSubscriptionManagerBarView() {
-        let subscriptionManagerBarView = SubscriptionManagerBarView()
+        
         
         view.addSubview(subscriptionManagerBarView)
         subscriptionManagerBarView.snp.makeConstraints {

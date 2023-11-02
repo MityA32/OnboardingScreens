@@ -11,8 +11,12 @@ import RxRelay
 
 final class OnboardingScreensViewModel {
     
-    let inNewPageClick = BehaviorRelay<Int>(value: 0)
+    let inNewPageClick = PublishSubject<Void>()
+    let inCloseClick = PublishSubject<Void>()
+    let inRestorePurchaseClick = PublishSubject<Void>()
+    
     let currentPage = BehaviorRelay<OnboardingPageInfo?>(value: OnboardingPageInfo(.yourPersonalAssistant, 0))
+    
     let manageOnboarding = PublishSubject<OnboardingEvent>()
     
     let disposeBag = DisposeBag()
@@ -28,23 +32,31 @@ final class OnboardingScreensViewModel {
     
     private func setupRx() {
         inNewPageClick
-            .filter { $0 < 4 }
-            .map { [weak self] in
-                guard let self else { return nil }
-                return OnboardingPageInfo(self.pages[$0], $0)
+            .withLatestFrom(currentPage)
+            .filter { [weak self] in $0?.number ?? 0 < self?.pages.count ?? 0 }
+            .map { [weak self] page -> OnboardingPageInfo? in
+                guard let self, let page else { return nil }
+                return OnboardingPageInfo(self.pages[page.number + 1], page.number + 1)
             }
             .bind(to: currentPage)
             .disposed(by: disposeBag)
         
         inNewPageClick
-            .filter { $0 > 3 }
+            .withLatestFrom(currentPage)
+            .filter { $0?.number ?? 0 > 3 }
             .map { _ in .pop}
             .bind(to: manageOnboarding)
             .disposed(by: disposeBag)
+        
+        inCloseClick
+            .map { _ in .pop }
+            .bind(to: manageOnboarding)
+            .disposed(by: disposeBag)
+        
+        inRestorePurchaseClick
+            .bind { [weak self] in
+                self?.subscriptionService.processTransaction()
+            }
+            .disposed(by: disposeBag)
     }
-}
-
-enum OnboardingEvent {
-    case pop
-    case push
 }

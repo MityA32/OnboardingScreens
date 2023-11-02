@@ -6,12 +6,16 @@
 //
 
 import UIKit
+import RxSwift
 
 final class SubscriptionManagerBarView: UIView {
     
-    private let restorePurchaseButtonView = UILabel()
-    private let closeScreenImageView = UIImageView()
+    private let restorePurchaseButtonView = UIButton()
+    private let closeScreenButton = UIButton()
     
+    let inRestorePurchaseClick = PublishSubject<Void>()
+    let inCloseClick = PublishSubject<Void>()
+    let disposeBag = DisposeBag()
     
     init() {
         super.init(frame: .zero)
@@ -32,7 +36,12 @@ final class SubscriptionManagerBarView: UIView {
     }
     
     private func setupRestorePurchaseButtonView() {
-        restorePurchaseButtonView.attributedText = Parameters.OnboardingPage.SubscriptionManagerBarView.attributedText
+        restorePurchaseButtonView.setAttributedTitle(Parameters.OnboardingPage.SubscriptionManagerBarView.attributedText, for: .normal)
+        restorePurchaseButtonView.isHighlighted = false
+        
+        restorePurchaseButtonView.rx.tap
+            .bind(to: inRestorePurchaseClick)
+            .disposed(by: disposeBag)
         
         addSubview(restorePurchaseButtonView)
         restorePurchaseButtonView.snp.makeConstraints {
@@ -45,11 +54,16 @@ final class SubscriptionManagerBarView: UIView {
     }
     
     private func setupCancelIcon() {
-        closeScreenImageView.image = Parameters.OnboardingPage.SubscriptionManagerBarView.cancelIcon
-        closeScreenImageView.contentMode = .scaleAspectFit
+        closeScreenButton.setImage(Parameters.OnboardingPage.SubscriptionManagerBarView.cancelIcon, for: .normal)
         
-        addSubview(closeScreenImageView)
-        closeScreenImageView.snp.makeConstraints {
+        closeScreenButton.contentMode = .scaleAspectFit
+        
+        closeScreenButton.rx.tap
+            .bind(to: inCloseClick)
+            .disposed(by: disposeBag)
+        
+        addSubview(closeScreenButton)
+        closeScreenButton.snp.makeConstraints {
             $0.width.height.equalTo(24)
             $0.right.equalTo(-16)
             $0.centerY.equalTo(snp.centerY)

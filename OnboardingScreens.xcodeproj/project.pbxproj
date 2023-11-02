@@ -32,6 +32,7 @@
 		93AB23C52AF332D90091D2CE /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AB23C42AF332D90091D2CE /* Coordinator.swift */; };
 		93AB23CA2AF3BE9E0091D2CE /* OnboardingPageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AB23C92AF3BE9E0091D2CE /* OnboardingPageInfo.swift */; };
 		93AB23CC2AF3BF670091D2CE /* ObservableType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AB23CB2AF3BF670091D2CE /* ObservableType+Extension.swift */; };
+		93AB23CE2AF3C66B0091D2CE /* OnboardingEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AB23CD2AF3C66B0091D2CE /* OnboardingEvent.swift */; };
 		E26E1FE468FD8583A0A5B33D /* Pods_OnboardingScreens.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8D6EDF2A794E310701986E /* Pods_OnboardingScreens.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,7 @@
 		93AB23C42AF332D90091D2CE /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		93AB23C92AF3BE9E0091D2CE /* OnboardingPageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageInfo.swift; sourceTree = "<group>"; };
 		93AB23CB2AF3BF670091D2CE /* ObservableType+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+Extension.swift"; sourceTree = "<group>"; };
+		93AB23CD2AF3C66B0091D2CE /* OnboardingEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingEvent.swift; sourceTree = "<group>"; };
 		B8C1B04F060956263E785F4D /* Pods-OnboardingScreens.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnboardingScreens.release.xcconfig"; path = "Target Support Files/Pods-OnboardingScreens/Pods-OnboardingScreens.release.xcconfig"; sourceTree = "<group>"; };
 		BD8D6EDF2A794E310701986E /* Pods_OnboardingScreens.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OnboardingScreens.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -218,6 +220,7 @@
 				93AB239D2AF1C59D0091D2CE /* OnboardingPage.swift */,
 				93AB23A82AF1D62F0091D2CE /* ActionButtonConfig.swift */,
 				93AB23C92AF3BE9E0091D2CE /* OnboardingPageInfo.swift */,
+				93AB23CD2AF3C66B0091D2CE /* OnboardingEvent.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 				93AB239E2AF1C59E0091D2CE /* OnboardingPage.swift in Sources */,
 				93AB23BC2AF2A2360091D2CE /* OnboardingPageCollectionViewCell.swift in Sources */,
 				93AB23952AF17F300091D2CE /* OnboardingCardView.swift in Sources */,
+				93AB23CE2AF3C66B0091D2CE /* OnboardingEvent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
