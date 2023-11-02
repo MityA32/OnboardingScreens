@@ -12,7 +12,7 @@ final class AppCoordinator: Coordinator {
     private var window = UIWindow(frame: UIScreen.main.bounds)
     var navigationController = UINavigationController()
     
-    let disposeBag = DisposeBag()
+    private let disposeBag = DisposeBag()
     
     init() {
         navigationController.navigationBar.isHidden = true
@@ -25,7 +25,6 @@ final class AppCoordinator: Coordinator {
     }
     
     private func showOnboarding() {
-        
         let onboardingViewModel = OnboardingScreensViewModel(subscriptionService: InAppPurchaseService())
         let onboardingViewController = OnboardingScreensViewController()
         onboardingViewController.viewModel = onboardingViewModel

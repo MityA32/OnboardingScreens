@@ -192,18 +192,19 @@ extension OnboardingScreensViewController: UITextViewDelegate {
 }
 
 extension OnboardingScreensViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         viewModel?.pages.count ?? 0
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = onboardingCardsCollectionView?.dequeueReusableCell(withReuseIdentifier: OnboardingPageCollectionViewCell.id, for: indexPath) as! OnboardingPageCollectionViewCell
         cell.config(from: viewModel?.pages[indexPath.row])
         return cell
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         CGSize(width: collectionView.bounds.width - 60, height: collectionView.bounds.height)
     }
-    
+
 }

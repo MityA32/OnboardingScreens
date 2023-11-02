@@ -29,7 +29,7 @@ final class InAppPurchaseService: NSObject, SubscriptionServiceProtocol {
         getProducts()
     }
     
-    func getProducts() {
+    private func getProducts() {
         let products: Set = [InAppPurchaseService.productIdentifier]
         let request = SKProductsRequest(productIdentifiers: products)
         request.delegate = self
@@ -115,7 +115,7 @@ extension InAppPurchaseService: SKPaymentTransactionObserver, SKProductsRequestD
 
             switch productID {
                 case InAppPurchaseService.productIdentifier:
-                        outRestoreResult.onNext(.success(()))
+                    outRestoreResult.onNext(.success(()))
 
                 default:
                     outRestoreResult.onNext(.failure(.productNotFound))

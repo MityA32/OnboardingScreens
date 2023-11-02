@@ -16,12 +16,12 @@ enum PaymentError: Error {
 extension PaymentError {
     var title: String {
         switch self {
-        case .cantMakePayment:
-            return "Can't make payment"
-        case .cantRestore:
-            return "Can't restore"
-        case .productNotFound:
-            return "Product not found"
+            case .cantMakePayment:
+                return "PaymentError: Can't make payment"
+            case .cantRestore:
+                return "PaymentError: Can't restore"
+            case .productNotFound:
+                return "PaymentError: Product not found"
         }
     }
 }
