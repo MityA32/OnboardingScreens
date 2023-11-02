@@ -12,8 +12,9 @@ final class OnboardingPageCollectionViewCell: UICollectionViewCell {
     
     private var pageCardView = OnboardingCardView()
     
-    func config(from type: OnboardingPage) {
-        pageCardView.setup(for: type)
+    func config(from page: OnboardingPage?) {
+        guard let page else { return }
+        pageCardView.setup(for: page)
         
         contentView.addSubview(pageCardView)
         pageCardView.snp.makeConstraints {

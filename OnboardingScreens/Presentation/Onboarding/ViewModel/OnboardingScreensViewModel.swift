@@ -13,12 +13,16 @@ final class OnboardingScreensViewModel {
     
     let inNewPageClick = BehaviorRelay<Int>(value: 0)
     let currentPage = BehaviorRelay<OnboardingPageInfo?>(value: OnboardingPageInfo(.yourPersonalAssistant, 0))
+    let manageOnboarding = PublishSubject<OnboardingEvent>()
     
-    private let disposeBag = DisposeBag()
+    let disposeBag = DisposeBag()
     
     let pages = OnboardingPage.allCases
     
-    init() {
+    let subscriptionService: SubscriptionServiceProtocol
+    
+    init(subscriptionService: SubscriptionServiceProtocol) {
+        self.subscriptionService = subscriptionService
         setupRx()
     }
     
@@ -31,15 +35,16 @@ final class OnboardingScreensViewModel {
             }
             .bind(to: currentPage)
             .disposed(by: disposeBag)
+        
+        inNewPageClick
+            .filter { $0 > 3 }
+            .map { _ in .pop}
+            .bind(to: manageOnboarding)
+            .disposed(by: disposeBag)
     }
 }
 
-struct OnboardingPageInfo {
-    let onboardingPage: OnboardingPage
-    let number: Int
-    
-    init(_ onboardingPage: OnboardingPage, _ number: Int) {
-        self.onboardingPage = onboardingPage
-        self.number = number
-    }
+enum OnboardingEvent {
+    case pop
+    case push
 }

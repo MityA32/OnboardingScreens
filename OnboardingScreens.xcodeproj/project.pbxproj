@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		93AB23792AF175960091D2CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AB23782AF175960091D2CE /* AppDelegate.swift */; };
-		93AB237B2AF175960091D2CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AB237A2AF175960091D2CE /* SceneDelegate.swift */; };
 		93AB237D2AF175960091D2CE /* OnboardingScreensViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AB237C2AF175960091D2CE /* OnboardingScreensViewController.swift */; };
 		93AB23822AF175990091D2CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93AB23812AF175990091D2CE /* Assets.xcassets */; };
 		93AB23852AF175990091D2CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93AB23832AF175990091D2CE /* LaunchScreen.storyboard */; };
@@ -29,6 +28,10 @@
 		93AB23BC2AF2A2360091D2CE /* OnboardingPageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AB23BB2AF2A2360091D2CE /* OnboardingPageCollectionViewCell.swift */; };
 		93AB23BE2AF318BD0091D2CE /* SubscriptionManagerBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AB23BD2AF318BD0091D2CE /* SubscriptionManagerBarView.swift */; };
 		93AB23C02AF320F00091D2CE /* Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AB23BF2AF320F00091D2CE /* Parameters.swift */; };
+		93AB23C22AF332AD0091D2CE /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AB23C12AF332AD0091D2CE /* AppCoordinator.swift */; };
+		93AB23C52AF332D90091D2CE /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AB23C42AF332D90091D2CE /* Coordinator.swift */; };
+		93AB23CA2AF3BE9E0091D2CE /* OnboardingPageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AB23C92AF3BE9E0091D2CE /* OnboardingPageInfo.swift */; };
+		93AB23CC2AF3BF670091D2CE /* ObservableType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AB23CB2AF3BF670091D2CE /* ObservableType+Extension.swift */; };
 		E26E1FE468FD8583A0A5B33D /* Pods_OnboardingScreens.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8D6EDF2A794E310701986E /* Pods_OnboardingScreens.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,7 +39,6 @@
 		8379B694122363E5FA89E2F6 /* Pods-OnboardingScreens.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnboardingScreens.debug.xcconfig"; path = "Target Support Files/Pods-OnboardingScreens/Pods-OnboardingScreens.debug.xcconfig"; sourceTree = "<group>"; };
 		93AB23752AF175960091D2CE /* OnboardingScreens.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnboardingScreens.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93AB23782AF175960091D2CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		93AB237A2AF175960091D2CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		93AB237C2AF175960091D2CE /* OnboardingScreensViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreensViewController.swift; sourceTree = "<group>"; };
 		93AB23812AF175990091D2CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93AB23842AF175990091D2CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,6 +60,10 @@
 		93AB23BB2AF2A2360091D2CE /* OnboardingPageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageCollectionViewCell.swift; sourceTree = "<group>"; };
 		93AB23BD2AF318BD0091D2CE /* SubscriptionManagerBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionManagerBarView.swift; sourceTree = "<group>"; };
 		93AB23BF2AF320F00091D2CE /* Parameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parameters.swift; sourceTree = "<group>"; };
+		93AB23C12AF332AD0091D2CE /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		93AB23C42AF332D90091D2CE /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		93AB23C92AF3BE9E0091D2CE /* OnboardingPageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageInfo.swift; sourceTree = "<group>"; };
+		93AB23CB2AF3BF670091D2CE /* ObservableType+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+Extension.swift"; sourceTree = "<group>"; };
 		B8C1B04F060956263E785F4D /* Pods-OnboardingScreens.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnboardingScreens.release.xcconfig"; path = "Target Support Files/Pods-OnboardingScreens/Pods-OnboardingScreens.release.xcconfig"; sourceTree = "<group>"; };
 		BD8D6EDF2A794E310701986E /* Pods_OnboardingScreens.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OnboardingScreens.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -118,7 +124,6 @@
 			isa = PBXGroup;
 			children = (
 				93AB23782AF175960091D2CE /* AppDelegate.swift */,
-				93AB237A2AF175960091D2CE /* SceneDelegate.swift */,
 				93AB23862AF175990091D2CE /* Info.plist */,
 			);
 			path = Application;
@@ -129,6 +134,7 @@
 			children = (
 				93AB23902AF177A40091D2CE /* Onboarding */,
 				93AB238E2AF1761B0091D2CE /* LaunchScreen */,
+				93AB23C12AF332AD0091D2CE /* AppCoordinator.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -170,6 +176,7 @@
 		93AB23922AF178BC0091D2CE /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				93AB23C32AF332C30091D2CE /* Coordinator */,
 				93AB239F2AF1CFDC0091D2CE /* PrivacyCenter */,
 				93AB239C2AF1C58A0091D2CE /* Onboarding */,
 			);
@@ -200,6 +207,7 @@
 			children = (
 				93AB239A2AF1839F0091D2CE /* String+Extension.swift */,
 				93AB23A22AF1D26C0091D2CE /* NSAttributedString+Extension.swift */,
+				93AB23CB2AF3BF670091D2CE /* ObservableType+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -209,6 +217,7 @@
 			children = (
 				93AB239D2AF1C59D0091D2CE /* OnboardingPage.swift */,
 				93AB23A82AF1D62F0091D2CE /* ActionButtonConfig.swift */,
+				93AB23C92AF3BE9E0091D2CE /* OnboardingPageInfo.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -265,6 +274,14 @@
 				93AB23BB2AF2A2360091D2CE /* OnboardingPageCollectionViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		93AB23C32AF332C30091D2CE /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				93AB23C42AF332D90091D2CE /* Coordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		A930C5E8D2FAFE8E3A276C50 /* Frameworks */ = {
@@ -398,11 +415,14 @@
 				93AB23A32AF1D26C0091D2CE /* NSAttributedString+Extension.swift in Sources */,
 				93AB237D2AF175960091D2CE /* OnboardingScreensViewController.swift in Sources */,
 				93AB23B92AF29C5D0091D2CE /* SubscriptionService.swift in Sources */,
+				93AB23CC2AF3BF670091D2CE /* ObservableType+Extension.swift in Sources */,
+				93AB23C22AF332AD0091D2CE /* AppCoordinator.swift in Sources */,
+				93AB23CA2AF3BE9E0091D2CE /* OnboardingPageInfo.swift in Sources */,
 				93AB23792AF175960091D2CE /* AppDelegate.swift in Sources */,
 				93AB23C02AF320F00091D2CE /* Parameters.swift in Sources */,
 				93AB23982AF181CE0091D2CE /* Constants.swift in Sources */,
-				93AB237B2AF175960091D2CE /* SceneDelegate.swift in Sources */,
 				93AB23A12AF1CFF60091D2CE /* PrivacyCenterOption.swift in Sources */,
+				93AB23C52AF332D90091D2CE /* Coordinator.swift in Sources */,
 				93AB23A72AF1D5E10091D2CE /* OnboardingScreensViewModel.swift in Sources */,
 				93AB239B2AF1839F0091D2CE /* String+Extension.swift in Sources */,
 				93AB23A92AF1D62F0091D2CE /* ActionButtonConfig.swift in Sources */,
@@ -560,8 +580,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -590,8 +609,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

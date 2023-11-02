@@ -6,7 +6,16 @@
 //
 
 import Foundation
+import StoreKit
 
-final class SubscriptionService {
+final class SubscriptionService: SubscriptionServiceProtocol {
     
+    func processTransaction() {
+        print("processing transaction...")
+    }
+    
+}
+
+protocol SubscriptionServiceProtocol {
+    func processTransaction()
 }

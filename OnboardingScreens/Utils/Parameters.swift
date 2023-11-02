@@ -58,7 +58,62 @@ enum Parameters {
             }()
         }
         
-        
+        enum TermsLabel {
+            static let attributedText = {
+                let paragraphStyle = NSMutableParagraphStyle()
+                paragraphStyle.lineSpacing = 0
+                paragraphStyle.minimumLineHeight = 14
+                paragraphStyle.maximumLineHeight = 14
+                let termsFont = UIFont(name: "SFProText-Regular", size: 12) ?? .systemFont(ofSize: 12, weight: .regular)
+                let grayTextAttributes: [NSAttributedString.Key : Any] = [
+                    NSAttributedString.Key.foregroundColor: AssetColor.hex6E6E73 ?? .gray,
+                    NSAttributedString.Key.paragraphStyle: paragraphStyle,
+                    NSAttributedString.Key.font: termsFont]
+                let blueTextAttributes: [NSAttributedString.Key : Any] = [
+                    NSAttributedString.Key.foregroundColor: AssetColor.hex208BFF ?? .blue,
+                    NSAttributedString.Key.paragraphStyle: paragraphStyle,
+                    NSAttributedString.Key.font: termsFont
+                ]
+                
+                let startAttributedText = NSMutableAttributedString(
+                    string: "By continuing you accept our:\n",
+                    attributes: grayTextAttributes)
+                
+                let termsOfUseText = NSMutableAttributedString(
+                    string: PrivacyCenterOption.termsOfUse.title,
+                    attributes: blueTextAttributes)
+                termsOfUseText.addAttribute(
+                    .link,
+                    value: PrivacyCenterOption.termsOfUse.link,
+                    range: termsOfUseText.fullLengthRange)
+                
+                let commaText = NSAttributedString(string: ", ", attributes: grayTextAttributes)
+                let privacyPolicyText = NSMutableAttributedString(
+                    string: PrivacyCenterOption.privacyPolicy.title,
+                    attributes: blueTextAttributes)
+                privacyPolicyText.addAttribute(
+                    .link,
+                    value: PrivacyCenterOption.privacyPolicy.link,
+                    range: privacyPolicyText.fullLengthRange)
+                
+                let andText = NSAttributedString(string: " and ", attributes: grayTextAttributes)
+                
+                let subscriptionTermsText = NSMutableAttributedString(
+                    string: PrivacyCenterOption.subscriptionTerms.title,
+                    attributes: blueTextAttributes)
+                subscriptionTermsText.addAttribute(
+                    .link,
+                    value: PrivacyCenterOption.subscriptionTerms.link,
+                    range: subscriptionTermsText.fullLengthRange)
+                 
+                startAttributedText.append(termsOfUseText)
+                startAttributedText.append(commaText)
+                startAttributedText.append(privacyPolicyText)
+                startAttributedText.append(andText)
+                startAttributedText.append(subscriptionTermsText)
+                return startAttributedText
+            }()
+        }
     }
     
 }
