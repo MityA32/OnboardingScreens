@@ -6,7 +6,7 @@ OnboardingScreens written app in Swift 5 demonstrating MVVM-C, using UIKit with 
 # How to run 
 REQUIREMENTS 
   XCode 15.0+
-  iOS 17.0+
+  iOS 15.0+
 
 GETTING STARTED
   1. Clone this repository.
