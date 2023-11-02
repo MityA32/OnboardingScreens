@@ -14,10 +14,8 @@ final class OnboardingScreensViewModel {
     let inNewPageClick = PublishSubject<Void>()
     let inCloseClick = PublishSubject<Void>()
     let inRestorePurchaseClick = PublishSubject<Void>()
-    
-    let currentPage = BehaviorRelay<OnboardingPageInfo?>(value: OnboardingPageInfo(.yourPersonalAssistant, 0))
-    
     let manageOnboarding = PublishSubject<OnboardingEvent>()
+    let currentPage = BehaviorRelay<OnboardingPageInfo?>(value: OnboardingPageInfo(.yourPersonalAssistant, 0))
     
     let disposeBag = DisposeBag()
     
@@ -33,7 +31,7 @@ final class OnboardingScreensViewModel {
     private func setupRx() {
         inNewPageClick
             .withLatestFrom(currentPage)
-            .filter { [weak self] in $0?.number ?? 0 < self?.pages.count ?? 0 }
+            .filter { [weak self] in $0?.number ?? 0 < (self?.pages.count ?? 0) - 1 }
             .map { [weak self] page -> OnboardingPageInfo? in
                 guard let self, let page else { return nil }
                 return OnboardingPageInfo(self.pages[page.number + 1], page.number + 1)
@@ -41,10 +39,34 @@ final class OnboardingScreensViewModel {
             .bind(to: currentPage)
             .disposed(by: disposeBag)
         
-        inNewPageClick
+        let payment = inNewPageClick
             .withLatestFrom(currentPage)
-            .filter { $0?.number ?? 0 > 3 }
-            .map { _ in .pop}
+            .filter { $0?.number ?? 0 == 3 }
+            .skip(1)
+            .flatMap { [weak self] _ in
+                self?.subscriptionService.processPayment() ?? .empty()
+            }
+            .flatMapLatest { [weak self] res in
+                self?.subscriptionService.outPaymentResult ?? .empty()
+            }
+        let restore = inRestorePurchaseClick
+            .flatMap { [weak self] _ in
+                self?.subscriptionService.restorePayment() ?? .empty()
+            }
+            .flatMapLatest { [weak self] res in
+                self?.subscriptionService.outRestoreResult ?? .empty()
+            }
+        
+        Observable
+            .merge(payment, restore)
+            .map {
+                switch $0 {
+                    case .success(_):
+                        return .pop
+                    case .failure(_):
+                        return .paymentFailed
+                }
+            }
             .bind(to: manageOnboarding)
             .disposed(by: disposeBag)
         
@@ -53,10 +75,5 @@ final class OnboardingScreensViewModel {
             .bind(to: manageOnboarding)
             .disposed(by: disposeBag)
         
-        inRestorePurchaseClick
-            .bind { [weak self] in
-                self?.subscriptionService.processTransaction()
-            }
-            .disposed(by: disposeBag)
     }
 }

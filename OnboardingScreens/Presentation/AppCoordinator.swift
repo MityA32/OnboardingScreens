@@ -26,7 +26,7 @@ final class AppCoordinator: Coordinator {
     
     private func showOnboarding() {
         
-        let onboardingViewModel = OnboardingScreensViewModel(subscriptionService: SubscriptionService())
+        let onboardingViewModel = OnboardingScreensViewModel(subscriptionService: InAppPurchaseService())
         let onboardingViewController = OnboardingScreensViewController()
         onboardingViewController.viewModel = onboardingViewModel
         
@@ -38,6 +38,8 @@ final class AppCoordinator: Coordinator {
                         print("Close Onboarding")
                     case .push:
                         print("Push to next")
+                    case .paymentFailed:
+                        print("payment failed")
                 }
                 
             }

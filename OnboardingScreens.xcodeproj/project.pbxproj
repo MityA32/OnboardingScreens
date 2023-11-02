@@ -24,7 +24,7 @@
 		93AB23B02AF275260091D2CE /* SFProText-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 93AB23AF2AF275260091D2CE /* SFProText-Regular.ttf */; };
 		93AB23B42AF27C9E0091D2CE /* SFProText-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 93AB23B12AF27C9D0091D2CE /* SFProText-Bold.ttf */; };
 		93AB23B52AF27C9E0091D2CE /* SFProText-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 93AB23B22AF27C9D0091D2CE /* SFProText-Medium.ttf */; };
-		93AB23B92AF29C5D0091D2CE /* SubscriptionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AB23B82AF29C5D0091D2CE /* SubscriptionService.swift */; };
+		93AB23B92AF29C5D0091D2CE /* InAppPurchaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AB23B82AF29C5D0091D2CE /* InAppPurchaseService.swift */; };
 		93AB23BC2AF2A2360091D2CE /* OnboardingPageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AB23BB2AF2A2360091D2CE /* OnboardingPageCollectionViewCell.swift */; };
 		93AB23BE2AF318BD0091D2CE /* SubscriptionManagerBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AB23BD2AF318BD0091D2CE /* SubscriptionManagerBarView.swift */; };
 		93AB23C02AF320F00091D2CE /* Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AB23BF2AF320F00091D2CE /* Parameters.swift */; };
@@ -33,6 +33,8 @@
 		93AB23CA2AF3BE9E0091D2CE /* OnboardingPageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AB23C92AF3BE9E0091D2CE /* OnboardingPageInfo.swift */; };
 		93AB23CC2AF3BF670091D2CE /* ObservableType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AB23CB2AF3BF670091D2CE /* ObservableType+Extension.swift */; };
 		93AB23CE2AF3C66B0091D2CE /* OnboardingEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AB23CD2AF3C66B0091D2CE /* OnboardingEvent.swift */; };
+		93AB23D42AF41CE20091D2CE /* SubscriptionServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AB23D32AF41CE20091D2CE /* SubscriptionServiceProtocol.swift */; };
+		93AB23D72AF41D1D0091D2CE /* PaymentError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AB23D62AF41D1D0091D2CE /* PaymentError.swift */; };
 		E26E1FE468FD8583A0A5B33D /* Pods_OnboardingScreens.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8D6EDF2A794E310701986E /* Pods_OnboardingScreens.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,7 +59,7 @@
 		93AB23AF2AF275260091D2CE /* SFProText-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProText-Regular.ttf"; sourceTree = "<group>"; };
 		93AB23B12AF27C9D0091D2CE /* SFProText-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProText-Bold.ttf"; sourceTree = "<group>"; };
 		93AB23B22AF27C9D0091D2CE /* SFProText-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProText-Medium.ttf"; sourceTree = "<group>"; };
-		93AB23B82AF29C5D0091D2CE /* SubscriptionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionService.swift; sourceTree = "<group>"; };
+		93AB23B82AF29C5D0091D2CE /* InAppPurchaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppPurchaseService.swift; sourceTree = "<group>"; };
 		93AB23BB2AF2A2360091D2CE /* OnboardingPageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageCollectionViewCell.swift; sourceTree = "<group>"; };
 		93AB23BD2AF318BD0091D2CE /* SubscriptionManagerBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionManagerBarView.swift; sourceTree = "<group>"; };
 		93AB23BF2AF320F00091D2CE /* Parameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parameters.swift; sourceTree = "<group>"; };
@@ -66,6 +68,8 @@
 		93AB23C92AF3BE9E0091D2CE /* OnboardingPageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageInfo.swift; sourceTree = "<group>"; };
 		93AB23CB2AF3BF670091D2CE /* ObservableType+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+Extension.swift"; sourceTree = "<group>"; };
 		93AB23CD2AF3C66B0091D2CE /* OnboardingEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingEvent.swift; sourceTree = "<group>"; };
+		93AB23D32AF41CE20091D2CE /* SubscriptionServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionServiceProtocol.swift; sourceTree = "<group>"; };
+		93AB23D62AF41D1D0091D2CE /* PaymentError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentError.swift; sourceTree = "<group>"; };
 		B8C1B04F060956263E785F4D /* Pods-OnboardingScreens.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnboardingScreens.release.xcconfig"; path = "Target Support Files/Pods-OnboardingScreens/Pods-OnboardingScreens.release.xcconfig"; sourceTree = "<group>"; };
 		BD8D6EDF2A794E310701986E /* Pods_OnboardingScreens.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OnboardingScreens.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -178,6 +182,7 @@
 		93AB23922AF178BC0091D2CE /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				93AB23D12AF41CC80091D2CE /* InAppPurchaseService */,
 				93AB23C32AF332C30091D2CE /* Coordinator */,
 				93AB239F2AF1CFDC0091D2CE /* PrivacyCenter */,
 				93AB239C2AF1C58A0091D2CE /* Onboarding */,
@@ -266,7 +271,7 @@
 		93AB23B72AF29C320091D2CE /* Subscription */ = {
 			isa = PBXGroup;
 			children = (
-				93AB23B82AF29C5D0091D2CE /* SubscriptionService.swift */,
+				93AB23B82AF29C5D0091D2CE /* InAppPurchaseService.swift */,
 			);
 			path = Subscription;
 			sourceTree = "<group>";
@@ -285,6 +290,31 @@
 				93AB23C42AF332D90091D2CE /* Coordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		93AB23D12AF41CC80091D2CE /* InAppPurchaseService */ = {
+			isa = PBXGroup;
+			children = (
+				93AB23D52AF41D0D0091D2CE /* Errors */,
+				93AB23D22AF41CCD0091D2CE /* Protocols */,
+			);
+			path = InAppPurchaseService;
+			sourceTree = "<group>";
+		};
+		93AB23D22AF41CCD0091D2CE /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				93AB23D32AF41CE20091D2CE /* SubscriptionServiceProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		93AB23D52AF41D0D0091D2CE /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				93AB23D62AF41D1D0091D2CE /* PaymentError.swift */,
+			);
+			path = Errors;
 			sourceTree = "<group>";
 		};
 		A930C5E8D2FAFE8E3A276C50 /* Frameworks */ = {
@@ -414,10 +444,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93AB23D72AF41D1D0091D2CE /* PaymentError.swift in Sources */,
 				93AB23BE2AF318BD0091D2CE /* SubscriptionManagerBarView.swift in Sources */,
 				93AB23A32AF1D26C0091D2CE /* NSAttributedString+Extension.swift in Sources */,
 				93AB237D2AF175960091D2CE /* OnboardingScreensViewController.swift in Sources */,
-				93AB23B92AF29C5D0091D2CE /* SubscriptionService.swift in Sources */,
+				93AB23B92AF29C5D0091D2CE /* InAppPurchaseService.swift in Sources */,
 				93AB23CC2AF3BF670091D2CE /* ObservableType+Extension.swift in Sources */,
 				93AB23C22AF332AD0091D2CE /* AppCoordinator.swift in Sources */,
 				93AB23CA2AF3BE9E0091D2CE /* OnboardingPageInfo.swift in Sources */,
@@ -430,6 +461,7 @@
 				93AB239B2AF1839F0091D2CE /* String+Extension.swift in Sources */,
 				93AB23A92AF1D62F0091D2CE /* ActionButtonConfig.swift in Sources */,
 				93AB239E2AF1C59E0091D2CE /* OnboardingPage.swift in Sources */,
+				93AB23D42AF41CE20091D2CE /* SubscriptionServiceProtocol.swift in Sources */,
 				93AB23BC2AF2A2360091D2CE /* OnboardingPageCollectionViewCell.swift in Sources */,
 				93AB23952AF17F300091D2CE /* OnboardingCardView.swift in Sources */,
 				93AB23CE2AF3C66B0091D2CE /* OnboardingEvent.swift in Sources */,
