@@ -10,6 +10,6 @@ import RxSwift
 protocol SubscriptionServiceProtocol {
     var outPaymentResultObservable: Observable<Result<Void, PaymentError>> { get }
     var outRestoreResultObservable: Observable<Result<Void, PaymentError>> { get }
-    func processPayment() -> Single<Void>
+    func processPayment() -> Single<Result<Void, PaymentError>>
     func restorePayment() -> Observable<Result<Void, PaymentError>>
 }

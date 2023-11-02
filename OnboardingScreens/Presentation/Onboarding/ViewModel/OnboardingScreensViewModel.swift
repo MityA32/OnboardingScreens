@@ -43,10 +43,11 @@ final class OnboardingScreensViewModel {
             .withLatestFrom(currentPage)
             .filter { $0?.number ?? 0 == 3 }
             .skip(1)
-            .flatMap { [weak self] _ in
-                self?.subscriptionService.processPayment() ?? .error(PaymentError.cantMakePayment)
+            .flatMap { [weak self] _ -> Single<Result<Void, PaymentError>> in
+               self?.subscriptionService.processPayment() ?? .error(PaymentError.cantMakePayment)
             }
-            .flatMapLatest { [weak self] res in
+            .catchAndReturn(.failure(.productNotFound))
+            .flatMapLatest { [weak self] event in
                 self?.subscriptionService.outPaymentResultObservable ?? .empty()
             }
         let restorePurchaseObservable = inRestorePurchaseClick
@@ -63,8 +64,8 @@ final class OnboardingScreensViewModel {
                 switch $0 {
                     case .success(_):
                         return .pop
-                    case .failure(_):
-                        return .paymentFailed
+                    case .failure(let error):
+                        return .paymentFailed(error: error)
                 }
             }
             .bind(to: manageOnboarding)

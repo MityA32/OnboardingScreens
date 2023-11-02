@@ -38,8 +38,8 @@ final class AppCoordinator: Coordinator {
                         print("Close Onboarding")
                     case .push:
                         print("Push to next")
-                    case .paymentFailed:
-                        let paymentFailedAlert = UIAlertController(title: "Error", message: "Payment failed", preferredStyle: .alert)
+                    case .paymentFailed(let error):
+                        let paymentFailedAlert = UIAlertController(title: "Error", message: error.title, preferredStyle: .alert)
                         let okAction = UIAlertAction(title: "OK", style: .default)
                         paymentFailedAlert.addAction(okAction)
                         self?.navigationController.present(paymentFailedAlert, animated: true)

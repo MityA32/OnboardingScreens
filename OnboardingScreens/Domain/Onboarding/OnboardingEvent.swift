@@ -10,5 +10,5 @@ import Foundation
 enum OnboardingEvent {
     case pop
     case push
-    case paymentFailed
+    case paymentFailed(error: PaymentError)
 }

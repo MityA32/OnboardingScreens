@@ -21,11 +21,12 @@ final class InAppPurchaseService: NSObject, SubscriptionServiceProtocol {
         outRestoreResult.asObservable()
     }
     
+    private var products: [SKProduct] = []
+    
     override init() {
         super.init()
         SKPaymentQueue.default().add(self)
         getProducts()
-        
     }
     
     func getProducts() {
@@ -35,17 +36,23 @@ final class InAppPurchaseService: NSObject, SubscriptionServiceProtocol {
         request.start()
     }
     
-    func processPayment() -> Single<Void> {
-        Single.create { observer in
+    func processPayment() -> Single<Result<Void, PaymentError>> {
+        Single.create { [weak self] single in
             switch SKPaymentQueue.canMakePayments() {
-                case true:
-                    let paymentRequest = SKMutablePayment()
-                    paymentRequest.productIdentifier = InAppPurchaseService.productIdentifier
+            case true:
+                if let product = self?.products.first(where: { $0.productIdentifier == InAppPurchaseService.productIdentifier }) {
+                    let paymentRequest = SKPayment(product: product)
                     SKPaymentQueue.default().add(paymentRequest)
-                    observer(.success(()))
-                case false:
-                    print("Can't make payments")
-                    observer(.failure(PaymentError.cantMakePayment))
+                    
+                    single(.success(.success(())))
+                } else {
+                    single(.success(.failure(PaymentError.productNotFound)))
+                    self?.outPaymentResult.onNext(.failure(PaymentError.productNotFound))
+                }
+                    
+            case false:
+                print("Can't make payments")
+                single(.success(.failure(PaymentError.cantMakePayment)))
             }
             
             return Disposables.create()
@@ -69,6 +76,7 @@ extension InAppPurchaseService: SKPaymentTransactionObserver, SKProductsRequestD
     }
     
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
+        self.products = response.products
         for product in response.products {
             print("Product: \(product)")
         }
