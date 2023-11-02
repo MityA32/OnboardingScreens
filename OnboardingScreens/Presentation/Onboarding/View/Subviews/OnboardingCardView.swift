@@ -49,7 +49,7 @@ final class OnboardingCardView: UIView {
         let visualEffectView = UIVisualEffectView(effect: blurEffect)
         visualEffectView.frame = bounds
         visualEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        visualEffectView.layer.opacity = 0.52
+        visualEffectView.layer.opacity = 0.74
         addSubview(visualEffectView)
     }
     
