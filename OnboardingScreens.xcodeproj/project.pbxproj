@@ -31,7 +31,6 @@
 		93AB23C22AF332AD0091D2CE /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AB23C12AF332AD0091D2CE /* AppCoordinator.swift */; };
 		93AB23C52AF332D90091D2CE /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AB23C42AF332D90091D2CE /* Coordinator.swift */; };
 		93AB23CA2AF3BE9E0091D2CE /* OnboardingPageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AB23C92AF3BE9E0091D2CE /* OnboardingPageInfo.swift */; };
-		93AB23CC2AF3BF670091D2CE /* ObservableType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AB23CB2AF3BF670091D2CE /* ObservableType+Extension.swift */; };
 		93AB23CE2AF3C66B0091D2CE /* OnboardingEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AB23CD2AF3C66B0091D2CE /* OnboardingEvent.swift */; };
 		93AB23D42AF41CE20091D2CE /* SubscriptionServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AB23D32AF41CE20091D2CE /* SubscriptionServiceProtocol.swift */; };
 		93AB23D72AF41D1D0091D2CE /* PaymentError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AB23D62AF41D1D0091D2CE /* PaymentError.swift */; };
@@ -66,7 +65,6 @@
 		93AB23C12AF332AD0091D2CE /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		93AB23C42AF332D90091D2CE /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		93AB23C92AF3BE9E0091D2CE /* OnboardingPageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageInfo.swift; sourceTree = "<group>"; };
-		93AB23CB2AF3BF670091D2CE /* ObservableType+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+Extension.swift"; sourceTree = "<group>"; };
 		93AB23CD2AF3C66B0091D2CE /* OnboardingEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingEvent.swift; sourceTree = "<group>"; };
 		93AB23D32AF41CE20091D2CE /* SubscriptionServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionServiceProtocol.swift; sourceTree = "<group>"; };
 		93AB23D62AF41D1D0091D2CE /* PaymentError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentError.swift; sourceTree = "<group>"; };
@@ -214,7 +212,6 @@
 			children = (
 				93AB239A2AF1839F0091D2CE /* String+Extension.swift */,
 				93AB23A22AF1D26C0091D2CE /* NSAttributedString+Extension.swift */,
-				93AB23CB2AF3BF670091D2CE /* ObservableType+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -449,7 +446,6 @@
 				93AB23A32AF1D26C0091D2CE /* NSAttributedString+Extension.swift in Sources */,
 				93AB237D2AF175960091D2CE /* OnboardingScreensViewController.swift in Sources */,
 				93AB23B92AF29C5D0091D2CE /* InAppPurchaseService.swift in Sources */,
-				93AB23CC2AF3BF670091D2CE /* ObservableType+Extension.swift in Sources */,
 				93AB23C22AF332AD0091D2CE /* AppCoordinator.swift in Sources */,
 				93AB23CA2AF3BE9E0091D2CE /* OnboardingPageInfo.swift in Sources */,
 				93AB23792AF175960091D2CE /* AppDelegate.swift in Sources */,
