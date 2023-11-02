@@ -21,7 +21,7 @@ final class OnboardingScreensViewModel {
     
     let pages = OnboardingPage.allCases
     
-    let subscriptionService: SubscriptionServiceProtocol
+    private let subscriptionService: SubscriptionServiceProtocol
     
     init(subscriptionService: SubscriptionServiceProtocol) {
         self.subscriptionService = subscriptionService
@@ -39,26 +39,26 @@ final class OnboardingScreensViewModel {
             .bind(to: currentPage)
             .disposed(by: disposeBag)
         
-        let payment = inNewPageClick
+        let processPaymentObservable = inNewPageClick
             .withLatestFrom(currentPage)
             .filter { $0?.number ?? 0 == 3 }
             .skip(1)
             .flatMap { [weak self] _ in
-                self?.subscriptionService.processPayment() ?? .empty()
+                self?.subscriptionService.processPayment() ?? .error(PaymentError.cantMakePayment)
             }
             .flatMapLatest { [weak self] res in
-                self?.subscriptionService.outPaymentResult ?? .empty()
+                self?.subscriptionService.outPaymentResultObservable ?? .empty()
             }
-        let restore = inRestorePurchaseClick
+        let restorePurchaseObservable = inRestorePurchaseClick
             .flatMap { [weak self] _ in
                 self?.subscriptionService.restorePayment() ?? .empty()
             }
             .flatMapLatest { [weak self] res in
-                self?.subscriptionService.outRestoreResult ?? .empty()
+                self?.subscriptionService.outRestoreResultObservable ?? .empty()
             }
         
         Observable
-            .merge(payment, restore)
+            .merge(processPaymentObservable, restorePurchaseObservable)
             .map {
                 switch $0 {
                     case .success(_):

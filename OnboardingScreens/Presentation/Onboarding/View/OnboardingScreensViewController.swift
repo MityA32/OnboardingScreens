@@ -162,8 +162,6 @@ final class OnboardingScreensViewController: UIViewController {
     }
     
     private func setupSubscriptionManagerBarView() {
-        
-        
         view.addSubview(subscriptionManagerBarView)
         subscriptionManagerBarView.snp.makeConstraints {
             $0.height.equalTo(44)

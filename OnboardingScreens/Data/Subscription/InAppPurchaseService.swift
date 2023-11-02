@@ -12,13 +12,20 @@ import RxSwift
 final class InAppPurchaseService: NSObject, SubscriptionServiceProtocol {
     static let productIdentifier = "com.hetman.subscription.monthly"
     
-    let outPaymentResult = PublishSubject<Result<Void, PaymentError>>()
-    let outRestoreResult = PublishSubject<Result<Void, PaymentError>>()
+    private let outPaymentResult = PublishSubject<Result<Void, PaymentError>>()
+    private let outRestoreResult = PublishSubject<Result<Void, PaymentError>>()
+    var outPaymentResultObservable: Observable<Result<Void, PaymentError>> {
+        outPaymentResult.asObservable()
+    }
+    var outRestoreResultObservable: Observable<Result<Void, PaymentError>> {
+        outRestoreResult.asObservable()
+    }
     
     override init() {
         super.init()
         SKPaymentQueue.default().add(self)
         getProducts()
+        
     }
     
     func getProducts() {
@@ -28,23 +35,20 @@ final class InAppPurchaseService: NSObject, SubscriptionServiceProtocol {
         request.start()
     }
     
-    func processPayment() -> Observable<Result<Void, PaymentError>> {
-        Observable.create { observer in
+    func processPayment() -> Single<Void> {
+        Single.create { observer in
             switch SKPaymentQueue.canMakePayments() {
                 case true:
                     let paymentRequest = SKMutablePayment()
                     paymentRequest.productIdentifier = InAppPurchaseService.productIdentifier
                     SKPaymentQueue.default().add(paymentRequest)
-                    
-                    observer.onNext(.success(()))
-                    observer.onCompleted()
+                    observer(.success(()))
                 case false:
                     print("Can't make payments")
-                    observer.onNext(.failure(.cantMakePayment))
-                    observer.onCompleted()
+                    observer(.failure(PaymentError.cantMakePayment))
             }
             
-            return Disposables.create { }
+            return Disposables.create()
         }
     }
     
@@ -53,16 +57,15 @@ final class InAppPurchaseService: NSObject, SubscriptionServiceProtocol {
             SKPaymentQueue.default().restoreCompletedTransactions()
             observer.onNext(.success(()))
             observer.onCompleted()
-            return Disposables.create { }
+            return Disposables.create()
         }
-        
     }
 }
 
 extension InAppPurchaseService: SKPaymentTransactionObserver, SKProductsRequestDelegate {
     func request(_ request: SKRequest, didFailWithError error: Error) {
         print(error.localizedDescription)
-//        outPaymentResult.onNext(.failure(PaymentError.cantMakePayment))
+        outPaymentResult.onNext(.failure(PaymentError.cantMakePayment))
     }
     
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
@@ -72,7 +75,6 @@ extension InAppPurchaseService: SKPaymentTransactionObserver, SKProductsRequestD
     }
     
     func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
-        
         for transaction in transactions {
             switch transaction.transactionState {
                 case .purchasing:
@@ -92,7 +94,6 @@ extension InAppPurchaseService: SKPaymentTransactionObserver, SKProductsRequestD
                     print("unknown")
             }
         }
-        
     }
     
     func paymentQueue(_ queue: SKPaymentQueue, restoreCompletedTransactionsFailedWithError error: Error) {

@@ -79,7 +79,7 @@ extension OnboardingPage {
         }
     }
     
-    var captionText: NSMutableAttributedString {
+    var captionText: NSAttributedString {
         let parameters = Parameters.OnboardingPage.CaptionText.self
         
         let paragraphStyle = NSMutableParagraphStyle()
