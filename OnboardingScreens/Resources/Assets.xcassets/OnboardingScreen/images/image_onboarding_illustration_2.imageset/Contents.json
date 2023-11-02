@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "image_onboarding_Illustration4.png",
+      "filename" : "image_onboarding_illustration_2.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "image_onboarding_Illustration4@2x.png",
+      "filename" : "image_onboarding_illustration_2@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "image_onboarding_Illustration4@3x.png",
+      "filename" : "image_onboarding_illustration_2@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

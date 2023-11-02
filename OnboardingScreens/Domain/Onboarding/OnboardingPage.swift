@@ -18,13 +18,13 @@ extension OnboardingPage {
     var image: UIImage? {
         switch self {
             case .yourPersonalAssistant:
-                return "image_onboarding_illustration1".image
+                return "image_onboarding_illustration_1".image
             case .getAssistanceWithAnyTopic:
-                return "image_onboarding_illustration2".image
+                return "image_onboarding_illustration_2".image
             case .perfectCopyYouCanRelyOn:
-                return "image_onboarding_illustration3".image
+                return "image_onboarding_illustration_3".image
             case .upgrageForUnlimitedAICapabilities:
-                return "image_onboarding_illustration4".image
+                return "image_onboarding_illustration_4".image
         }
     }
     
