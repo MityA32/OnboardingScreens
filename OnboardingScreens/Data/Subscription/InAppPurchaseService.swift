@@ -101,6 +101,10 @@ extension InAppPurchaseService: SKPaymentTransactionObserver, SKProductsRequestD
                 @unknown default:
                     print("unknown")
             }
+            switch transaction.transactionState {
+                case .purchasing: break
+                default: SKPaymentQueue.default().finishTransaction(transaction)
+            }
         }
     }
     
